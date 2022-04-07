@@ -1,7 +1,7 @@
 .grid-container{
-    display: flex;
+    display: inline-block;
     gap: 10px;
-    margin-top: 70px ;
     justify-content: center;
-
+    flex-direction: column;
+    border: 2px solid rebeccapurple;
 }
