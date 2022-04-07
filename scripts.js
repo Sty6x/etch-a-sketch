@@ -8,18 +8,18 @@ const createGrid = (gridSize, paddingSize) => {
         console.log(i)
         let gridColumns = document.createElement('div');
         gridColumns.setAttribute('class','grids grid-column')
-        gridColumns.style.border = '2px solid red';
-        gridColumns.style.padding = paddingSize;
+        gridColumns.style.padding = paddingSize + 'px';
         gridContainer.appendChild(gridColumns);
+        // gridColumns.textContent = `${i}`
         for(let j = 0; j < gridSize; j++){
             console.log(j)
             let gridRows = document.createElement('div');
             gridRows.setAttribute('class','grids grid-row')
-            gridRows.style.border = '2px solid red';
-            gridRows.style.padding = paddingSize;
+            gridRows.style.padding = paddingSize + 'px';
             gridContainer.appendChild(gridRows);
+            // gridRows.textContent = `${j}`
         }
     }
 }
 
-createGrid(4, '20px');
+createGrid(16, 20);

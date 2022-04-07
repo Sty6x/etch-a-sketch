@@ -1,7 +1,26 @@
 .grid-container{
-    display: inline-block;
-    gap: 10px;
+    display: flex;
+    /* gap: 2px; */
     justify-content: center;
-    flex-direction: column;
+    align-items: center;
+    /* flex-direction: column; */
     border: 2px solid rebeccapurple;
+    flex-wrap: wrap;
+    padding: 100px;
+
 }
+
+.grid-container .grids{
+    /* display: flex; */
+    flex-grow: 1;
+    flex-shrink: 1;
+    
+}
+.grid-container > .grid-column{
+    border: 2px solid red;
+}
+
+.grid-container > .grid-row{
+    border: 2px solid rgb(0, 110, 255);
+}
+
