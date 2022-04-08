@@ -3,6 +3,9 @@ const gridContainer = document.querySelector('.grid-container');
 
 
 
+// todo
+//make container have a fixed size and grids have flex grow
+
 const createGrid = (gridSize, paddingSize) => {
     for (let i = 0; i < gridSize; i++) {
         console.log(i)
@@ -22,4 +25,7 @@ const createGrid = (gridSize, paddingSize) => {
     }
 }
 
-createGrid(16, 20);
+
+//bug overflowing second parameter(paddingSize) is above 15
+//bug asymmetrical grids first parameter(gridSize) is change differently
+createGrid(16, 16);
