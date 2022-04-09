@@ -3,19 +3,22 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 
 /* comeback to this */
 .header{
     padding: 80px;
+    font-size: larger;
+    
 }
 
 /* bug couldn't contain overflowing */
 .grid-container{
     display: flex;
     justify-content: center;
-
+    background-color: antiquewhite;
     flex-direction: column;
     border: 2px solid rebeccapurple;
     flex-wrap: wrap;
@@ -23,23 +26,24 @@ body{
     height: 600px;
 }
 
+
+.grid-container .grids{
+    flex: 1;
+    border: 1px solid rgb(0, 0, 0);
+}
+.grid-container > .grid-column{
+    /* border: 1px solid red; */
+  
+}
+
+/* .grid-container > .grid-row{
+    border: 1px solid blue;
+   
+} */
+
 /* /* comeback to this */ 
 .footer{
     margin-top: 150px;
     /* padding: 80px; */
 } 
-
-.grid-container .grids{
-    flex: 1;
-    /* border: 1px solid rgb(0, 0, 0); */
-}
-.grid-container > .grid-column{
-    border: 1px solid red;
-  
-}
-
-.grid-container > .grid-row{
-    border: 1px solid blue;
-   
-}
 

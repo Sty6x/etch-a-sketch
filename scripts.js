@@ -1,6 +1,6 @@
 // const gridContainer = document.getElementsByClassName('grid-container');
 const gridContainer = document.querySelector('.grid-container');
-let gridColumns;
+let grids;
 let gridRows;
 
 
@@ -9,27 +9,18 @@ let gridRows;
 
 const createGrid = (gridSize, paddingSize) => {
     for (let i = 0; i < gridSize; i++) {
-        // console.log(i)
-        gridColumns = document.createElement('div');
-        gridColumns.setAttribute('class','grids grid-column')
-        gridColumns.style.padding = paddingSize + 'px';
-        gridContainer.appendChild(gridColumns);
+        grids = document.createElement('div');
+        grids.setAttribute('class','grids grid-column')
+        grids.style.padding = paddingSize + 'px';
+        gridContainer.appendChild(grids);
         // gridColumns.textContent = `${i}`
-        drawGrid(gridColumns);
+        drawGrid(grids, i);
         for(let j = 0; j < gridSize; j++){
-            // console.log(j)
-            gridColumns = document.createElement('div');
-            gridColumns.setAttribute('class','grids grid-column')
-            gridColumns.style.padding = paddingSize + 'px';
-            gridContainer.appendChild(gridColumns);
-            // gridColumns.textContent = `${j}`
-            // gridRows.addEventListener('mouseenter', () =>{
-            //     console.log("mouse entered position: " + j)
-            // })
-            // gridRows.addEventListener('mouseleave', () =>{
-            //     console.log("mouse leave position: " + j)
-            // })
-            drawGrid(gridColumns);
+            grids = document.createElement('div');
+            grids.setAttribute('class','grids grid-column')
+            grids.style.padding = paddingSize + 'px';
+            gridContainer.appendChild(grids);
+            drawGrid(grids, j);
         }
       
     }
@@ -38,12 +29,13 @@ const createGrid = (gridSize, paddingSize) => {
 }
 
  
-function drawGrid(column){
-    column.addEventListener('mouseenter', () =>{
-        console.log("mouse entered")
+function drawGrid(grids, position){
+    grids.addEventListener('mouseenter', () =>{
+        console.log("mouse entered position: " + position)
+        grids.style.backgroundColor = 'grey';
     })
-    column.addEventListener('mouseleave', () =>{
-        console.log("mouse leave")
+    grids.addEventListener('mouseleave', () =>{
+        console.log("mouse leave position: " + position)
     })
 
 }
