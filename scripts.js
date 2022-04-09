@@ -15,39 +15,34 @@ const createGrid = (gridSize, paddingSize) => {
         gridColumns.style.padding = paddingSize + 'px';
         gridContainer.appendChild(gridColumns);
         // gridColumns.textContent = `${i}`
+        drawGrid(gridColumns);
         for(let j = 0; j < gridSize; j++){
             // console.log(j)
-            gridRows = document.createElement('div');
-            gridRows.setAttribute('class','grids grid-row')
-            gridRows.style.padding = paddingSize + 'px';
-            gridContainer.appendChild(gridRows);
-            // gridRows.textContent = `${j}`
-            // draw(gridColumns,gridRows);
-            gridRows.addEventListener('mouseenter', () =>{
-                console.log("mouse entered position: " + j)
-            })
-            gridRows.addEventListener('mouseleave', () =>{
-                console.log("mouse leave position: " + j)
-            })
+            gridColumns = document.createElement('div');
+            gridColumns.setAttribute('class','grids grid-column')
+            gridColumns.style.padding = paddingSize + 'px';
+            gridContainer.appendChild(gridColumns);
+            // gridColumns.textContent = `${j}`
+            // gridRows.addEventListener('mouseenter', () =>{
+            //     console.log("mouse entered position: " + j)
+            // })
+            // gridRows.addEventListener('mouseleave', () =>{
+            //     console.log("mouse leave position: " + j)
+            // })
+            drawGrid(gridColumns);
         }
-        // drawGrid(gridColumns,gridRows);
+      
     }
 
     
 }
 
  
-function drawGrid(column,rows){
+function drawGrid(column){
     column.addEventListener('mouseenter', () =>{
         console.log("mouse entered")
     })
-    rows.addEventListener('mouseenter', () =>{
-        console.log("mouse entered")
-    })
     column.addEventListener('mouseleave', () =>{
-        console.log("mouse leave")
-    })
-    rows.addEventListener('mouseleave', () =>{
         console.log("mouse leave")
     })
 
