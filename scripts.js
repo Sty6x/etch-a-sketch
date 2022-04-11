@@ -16,42 +16,46 @@ const createGrid = (gridSize, paddingSize) => {
     let grids;
     for (let i = 0; i < gridSize; i++) {
         grids = document.createElement('div');
-        grids.setAttribute('class','grids grid-column')
+        grids.setAttribute('class', 'grids grid-column')
         grids.style.padding = paddingSize + 'px';
         gridContainer.appendChild(grids);
         // gridColumns.textContent = `${i}`
         drawGrid(grids, i);
-        for(let j = 0; j < gridSize; j++){
+        resetGrid(grids);
+
+        for (let j = 0; j < gridSize; j++) {
             grids = document.createElement('div');
-            grids.setAttribute('class','grids grid-column')
+            grids.setAttribute('class', 'grids grid-column')
             grids.style.padding = paddingSize + 'px';
             gridContainer.appendChild(grids);
-            console.log(grids.classList);
+            // console.log(grids.classList);
             drawGrid(grids, j);
+            resetGrid(grids);
+
         }
-      
+        resetGrid(grids);
     }
-    
+
+
 }
 
 
- 
-function drawGrid(grids, position){
-    grids.addEventListener('mouseenter', () =>{
+function drawGrid(grids, position) {
+    grids.addEventListener('mouseenter', () => {
         // console.log("mouse entered position: " + position)
-        grids.style.backgroundColor = 'grey';
         grids.classList.add('colored-grid');
-        console.log(grids.classList);
     })
-    // grids.addEventListener('mouseleave', () =>{
-    //     // console.log("mouse leave position: " + position)
-    // })
+
 
 }
 
 
 
-function resetGrid(grid){
+function resetGrid(grid) {
+    resetButton.addEventListener('click', () => {
+        grid.classList.remove('colored-grid');
+        console.log('clicked remove')
+    })
 
 }
 
