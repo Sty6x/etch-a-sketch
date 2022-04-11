@@ -3,63 +3,48 @@ const gridContainer = document.querySelector('.grid-container');
 const resetButton = document.createElement('button');
 const body = document.querySelector('body');
 const header = document.querySelector('header');
+resetButton.textContent = "Reset Grid";
 
-
-body.insertBefore(resetButton, header);
-
+body.insertBefore(resetButton, gridContainer);
 
 
 // todo
 //make container have a fixed size and grids have flex grow
 
-const createGrid = (gridSize, paddingSize) => {
+const createGrid = (gridSize, Size) => {
     let grids;
     for (let i = 0; i < gridSize; i++) {
-        grids = document.createElement('div');
-        grids.setAttribute('class', 'grids grid-column')
-        grids.style.padding = paddingSize + 'px';
-        gridContainer.appendChild(grids);
-        // gridColumns.textContent = `${i}`
-        drawGrid(grids, i);
-        resetGrid(grids);
-
+        // grids = document.createElement('div');
+        // grids.setAttribute('class', 'grids grid-column')
+        // grids.style.padding = Size + 'px';
+        // gridContainer.appendChild(grids);
+        // drawGrid(grids);
+        // resetGrid(grids);
         for (let j = 0; j < gridSize; j++) {
             grids = document.createElement('div');
             grids.setAttribute('class', 'grids grid-column')
-            grids.style.padding = paddingSize + 'px';
+            grids.style.padding = Size + 'px';
             gridContainer.appendChild(grids);
-            // console.log(grids.classList);
-            drawGrid(grids, j);
+            drawGrid(grids);
             resetGrid(grids);
-
         }
         resetGrid(grids);
     }
-
-
 }
 
 
-function drawGrid(grids, position) {
-    grids.addEventListener('mouseenter', () => {
-        // console.log("mouse entered position: " + position)
-        grids.classList.add('colored-grid');
-    })
-
-
+function drawGrid(grids) {
+    grids.addEventListener('mouseenter', () => grids.classList.add('colored-grid'))
 }
-
-
 
 function resetGrid(grid) {
     resetButton.addEventListener('click', () => {
         grid.classList.remove('colored-grid');
         console.log('clicked remove')
     })
-
 }
 
 
 //bug overflowing second parameter(paddingSize) is above 15
 //bug asymmetrical grids first parameter(gridSize) is change differently
-createGrid(16, 16);
+createGrid(12, 26);
