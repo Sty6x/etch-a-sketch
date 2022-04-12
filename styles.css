@@ -7,13 +7,18 @@ body{
 }
 
 
-body button{
-    width: 100px;
+.buttons{
+    display: flex;
+     gap: 10px;
+}
+.buttons button{
+     width: 100px;
     height: 50px;
     font-size: larger;
-    font-weight: bold;
+    /* font-weight: ; */
     margin-bottom: 50px;
     border-radius: 10px;
+    
 }
 
 /* comeback to this */
@@ -28,18 +33,25 @@ body button{
 .grid-container{
     display: flex;
     justify-content: center;
+    /* align-items: center; */
     background-color: antiquewhite;
     flex-direction: column;
     border: 2px solid rebeccapurple;
+    /* flex-flow: column wrap; */
     flex-wrap: wrap;
     width: 700px;
     height: 700px;
+    /* min-width: 0; */
 }
 
 
 .grid-container .grids{
-    flex: 1;
+    flex-grow: 1;
+    /* flex-shrink: 1; */
     border: 1px solid rgb(0, 0, 0);
+    /* width: 138px;
+    height: 138px; */
+    padding: 20px;
 }
 
 .grid-container .colored-grid{
@@ -48,7 +60,7 @@ body button{
 
 /* /* comeback to this */ 
 .footer{
-    margin-top: 150px;
+    margin-top: auto;
     /* padding: 80px; */
 } 
 
