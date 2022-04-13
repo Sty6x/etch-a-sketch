@@ -14,7 +14,7 @@ setGridSizeButton.textContent = 'Set Grid Size';
 //prompts grid size input on reset
 buttons.appendChild(setGridSizeButton,gridContainer);
 
-
+// d
 // console.log(size);
 
 const createGrid = (gridSize) => {
